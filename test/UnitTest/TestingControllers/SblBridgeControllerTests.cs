@@ -38,7 +38,7 @@ namespace Altinn.Platform.Storage.UnitTest.TestingControllers
             string token = PrincipalUtil.GetOrgToken("foo", scope: "altinn:correspondence.sblbridge");
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-            var response = await client.PostAsync("storage/api/v1/sblbridge/correspondencerecipient?partyId=1337", JsonContent.Create(new
+            var response = await client.PostAsync("storage/api/v1/sblbridge/correspondencerecipient", JsonContent.Create(new
             {
                 partyId = 1337
             }));
@@ -53,7 +53,7 @@ namespace Altinn.Platform.Storage.UnitTest.TestingControllers
             string token = PrincipalUtil.GetOrgToken("foo", scope: "altinn:correspondence.sblbridge");
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-            var response = await client.PostAsync("storage/api/v1/sblbridge/correspondencerecipient?partyId=0", JsonContent.Create(new
+            var response = await client.PostAsync("storage/api/v1/sblbridge/correspondencerecipient", JsonContent.Create(new
             {
                 partyId = 0
             }));
